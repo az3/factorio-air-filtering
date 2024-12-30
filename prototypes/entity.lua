@@ -11,7 +11,8 @@ data:extend({
     corpse = "big-remnants",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    animation =
+    graphics_set = 
+    { animation =
     {
       filename = "__air-filtering__/graphics/entity/air-filter-machine.png",
       priority = "high",
@@ -20,6 +21,7 @@ data:extend({
       frame_count = 32,
       line_length = 8,
       shift = {0.4, -0.06}
+    }
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -55,7 +57,8 @@ data:extend({
     corpse = "big-remnants",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    animation =
+    graphics_set = 
+    { animation =
     {
       filename = "__air-filtering__/graphics/entity/air-filter-machine-mk2.png",
       priority = "high",
@@ -64,6 +67,7 @@ data:extend({
       frame_count = 32,
       line_length = 8,
       shift = {0.4, -0.06}
+    }
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -99,7 +103,8 @@ data:extend({
     corpse = "big-remnants",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    animation =
+    graphics_set = 
+    { animation =
     {
       filename = "__air-filtering__/graphics/entity/air-filter-machine-mk3.png",
       priority = "high",
@@ -108,6 +113,7 @@ data:extend({
       frame_count = 32,
       line_length = 8,
       shift = {0.4, -0.06}
+    }
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
