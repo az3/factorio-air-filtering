@@ -1,0 +1,9 @@
+{
+    "description": "Adding machines to reduce pollution",
+    "author": "Schorty, Fr_Dae, cagricelebi",
+    "factorio_version": "1.1",
+	"dependencies": ["base >= 1.1.0"],
+    "name": "air-filtering",
+    "version": "0.8.7",
+    "title": "Air filtering"
+}
