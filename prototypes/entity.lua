@@ -37,7 +37,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = -180
+      emissions_per_minute = { pollution = -180 }
     },
     energy_usage = "200kW",
     ingredient_count = 1,
@@ -81,7 +81,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = -480
+      emissions_per_minute = { pollution = -480 }
     },
     energy_usage = "350kW",
     ingredient_count = 1,
@@ -125,7 +125,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = -2400,
+      emissions_per_minute = { pollution = -2400 },
     },
     energy_usage = "1MW",
     ingredient_count = 1,

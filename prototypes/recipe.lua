@@ -9,14 +9,14 @@ data:extend({
     icon = "__air-filtering__/graphics/icons/air-filter-machine.png",
     icon_size = 32,
     energy_required = 10.0,
-    enabled = "false",
+    enabled = false,
     ingredients =
     {
-      {"assembling-machine-2", 1},
-      {"electronic-circuit", 5},
-      {"steel-plate", 10}
+      {type="item", name="assembling-machine-2", amount=1},
+      {type="item", name="electronic-circuit", amount=5},
+      {type="item", name="steel-plate", amount=10}
     },
-    result = "air-filter-machine"
+    results = {{type="item", name="air-filter-machine", amount=1}}
   },
   {
     type = "recipe",
@@ -24,13 +24,13 @@ data:extend({
     icon = "__air-filtering__/graphics/icons/air-filter-machine-mk2.png",
     icon_size = 32,
     energy_required = 10.0,
-    enabled = "false",
+    enabled = false,
     ingredients =
     {
-      {"air-filter-machine", 2},
-      {"advanced-circuit", 10}
+      {type="item", name="air-filter-machine", amount=2},
+      {type="item", name="advanced-circuit", amount=10}
     },
-    result = "air-filter-machine-mk2"
+    results = {{type="item", name="air-filter-machine-mk2", amount=1}}
   },
   {
     type = "recipe",
@@ -38,13 +38,13 @@ data:extend({
     icon = "__air-filtering__/graphics/icons/air-filter-machine-mk3.png",
     icon_size = 32,
     energy_required = 10.0,
-    enabled = "false",
+    enabled = false,
     ingredients =
     {
-      {"air-filter-machine-mk2", 2},
-      {"processing-unit", 10}
+      {type="item", name="air-filter-machine-mk2", amount=2},
+      {type="item", name="processing-unit", amount=10}
     },
-    result = "air-filter-machine-mk3"
+    results = {{type="item", name="air-filter-machine-mk3", amount=1}}
   },
   {
     type = "recipe",
@@ -55,14 +55,14 @@ data:extend({
     subgroup = "raw-material",
     order = "f[plastic-bar]-f[unused-air-filter]",
     energy_required = 5,
-    enabled = "false",
+    enabled = false,
     ingredients =
     {
-      {"coal", 10},
-      {"plastic-bar", 4},
-      {"steel-plate", 2}
+      {type="item", name="coal", amount=10},
+      {type="item", name="plastic-bar", amount=4},
+      {type="item", name="steel-plate", amount=2}
     },
-    result = "unused-air-filter"
+    results = {{type="item", name="unused-air-filter", amount=1}}
   },
   {
     type = "recipe",
@@ -72,12 +72,12 @@ data:extend({
     category = "crafting-air-filter",
     order = "f[plastic-bar]-f[filter-air]",
     energy_required = 100,
-    enabled = "false",
+    enabled = false,
     ingredients =
     {
-      {"unused-air-filter", 1}
+      {type="item", name="unused-air-filter", amount=1}
     },
-    result = "used-air-filter"
+    results = {{type="item", name="used-air-filter", amount=1}}
   },
   {
     type = "recipe",
@@ -88,12 +88,12 @@ data:extend({
     subgroup = "raw-material",
     order = "f[unused-air-filter]-f[air-filter-recycling]",
     energy_required = 5,
-    enabled = "false",
+    enabled = false,
     ingredients =
     {
-      {"used-air-filter", 1},
-      {"coal", 5}
+      {type="item", name="used-air-filter", amount=1},
+      {type="item", name="coal", amount=5}
     },
-    result = "unused-air-filter"
+    results = {{type="item", name="unused-air-filter", amount=1}}
   }
 })

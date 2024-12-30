@@ -3,8 +3,8 @@ data:extend({
     type = "technology",
     name = "air-filtering",
     icon = "__air-filtering__/graphics/technology/air-filtering.png",
-    icon_size = "64",
-    prerequisites = {"plastics", "steel-processing", "advanced-electronics"},
+    icon_size = 64,
+    prerequisites = {"plastics", "steel-processing", "advanced-circuit"},
     effects =
     {
       {
@@ -35,7 +35,7 @@ data:extend({
     type = "technology",
     name = "air-filtering-mk2",
     icon = "__air-filtering__/graphics/technology/air-filtering-mk2.png",
-    icon_size = "64",
+    icon_size = 64,
     prerequisites = {"air-filtering"},
     effects =
     {
@@ -60,7 +60,7 @@ data:extend({
     type = "technology",
     name = "air-filtering-mk3",
     icon = "__air-filtering__/graphics/technology/air-filtering-mk3.png",
-    icon_size = "64",
+    icon_size = 64,
     prerequisites = {"air-filtering-mk2"},
     effects =
     {
@@ -86,7 +86,7 @@ data:extend({
     type = "technology",
     name = "air-filter-recycling",
     icon = "__air-filtering__/graphics/technology/air-filter-recycling.png",
-    icon_size = "64",
+    icon_size = 64,
     prerequisites = {"air-filtering"},
     effects =
     {
