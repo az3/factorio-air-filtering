@@ -38,7 +38,7 @@ data:extend({
     icon = "__air-filtering__/graphics/icons/unused-air-filter.png",
     icon_size = 32,
     flags = {},
-    subgroup = "raw-material",
+    subgroup = "intermediate-product",
     order = "g[plastic-bar]-h[unused-air-filter]",
     stack_size = 50
   },
@@ -48,7 +48,7 @@ data:extend({
     icon = "__air-filtering__/graphics/icons/used-air-filter.png",
     icon_size = 32,
     flags = {},
-    subgroup = "raw-material",
+    subgroup = "intermediate-product",
     order = "h[unused-air-filter]-i[used-air-filter]",
     stack_size = 50
   }
