@@ -43,7 +43,11 @@ data:extend({
     },
     energy_usage = "200kW",
     ingredient_count = 1,
-    module_slots = 0
+    module_slots = 0,
+    -- Basic circuit network properties
+    circuit_wire_max_distance = 7.5,
+    draw_copper_wires = true,
+    draw_circuit_wires = true
   },
   {
     type = "furnace",
@@ -89,7 +93,11 @@ data:extend({
     },
     energy_usage = "350kW",
     ingredient_count = 1,
-    module_slots = 0
+    module_slots = 0,
+    -- Basic circuit network properties
+    circuit_wire_max_distance = 7.5,
+    draw_copper_wires = true,
+    draw_circuit_wires = true
   },
   {
     type = "furnace",
@@ -135,6 +143,10 @@ data:extend({
     },
     energy_usage = "1MW",
     ingredient_count = 1,
-    module_slots = 0
+    module_slots = 0,
+    -- Basic circuit network properties
+    circuit_wire_max_distance = 7.5,
+    draw_copper_wires = true,
+    draw_circuit_wires = true
   }
 })

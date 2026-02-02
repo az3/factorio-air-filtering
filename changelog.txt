@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.6
+Date: 2026-01-31
+  Changes:
+    - Added circuit network connectivity to all air filter machines.
+    - Air filter machines can now be controlled via circuit network conditions.
+    - Air filter machines can now output their contents to the circuit network.
+    - Added compatibility with space-age mod for circuit network features.
+---------------------------------------------------------------------------------------------------
 Version: 0.9.5
 Date: 2025-07-24
   Changes:
