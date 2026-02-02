@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.7
+Date: 2026-02-01
+  Changes:
+    - Added module support to all air filter machines (speed and effectivity modules only).
+    - Quality and productivity modules are now disabled as requested.
+    - Efficiency modules increase pollution removal rate rather than reducing energy consumption.
+    - Increased module slots: Basic (2), MK2 (3), MK3 (4).
+---------------------------------------------------------------------------------------------------
 Version: 0.9.6
 Date: 2026-01-31
   Changes:
