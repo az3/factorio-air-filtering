@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.8
+Date: 2026-02-01
+  Changes:
+    - Added control.lua for custom module behavior.
+    - Efficiency modules now increase pollution removal rate (acting like productivity for cleanup).
+    - Speed modules increase effective pollution removal by processing filters faster.
+    - Reduced base emissions values to allow module bonuses to shine.
+    - Full module support with efficiency modules converting to ~67% pollution removal bonus.
+---------------------------------------------------------------------------------------------------
 Version: 0.9.7
 Date: 2026-02-01
   Changes:

@@ -11,7 +11,7 @@ data:extend({
     corpse = "big-remnants",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    graphics_set = 
+    graphics_set =
     { animation =
     {
       filename = "__air-filtering__/graphics/entity/air-filter-machine.png",
@@ -39,7 +39,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = -180 }
+      emissions_per_minute = { pollution = -60 }  -- Reduced base value, control.lua adds module bonus
     },
     energy_usage = "200kW",
     ingredient_count = 1,
@@ -63,7 +63,7 @@ data:extend({
     corpse = "big-remnants",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    graphics_set = 
+    graphics_set =
     { animation =
     {
       filename = "__air-filtering__/graphics/entity/air-filter-machine-mk2.png",
@@ -91,7 +91,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = -480 }
+      emissions_per_minute = { pollution = -160 }  -- Reduced base value, control.lua adds module bonus
     },
     energy_usage = "350kW",
     ingredient_count = 1,
@@ -115,7 +115,7 @@ data:extend({
     corpse = "big-remnants",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    graphics_set = 
+    graphics_set =
     { animation =
     {
       filename = "__air-filtering__/graphics/entity/air-filter-machine-mk3.png",
@@ -143,7 +143,7 @@ data:extend({
     {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = { pollution = -2400 },
+      emissions_per_minute = { pollution = -800 }  -- Reduced base value, control.lua adds module bonus
     },
     energy_usage = "1MW",
     ingredient_count = 1,
