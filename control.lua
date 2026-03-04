@@ -1,17 +1,15 @@
 -- Control script for air filtering mod
 -- Makes efficiency modules increase pollution removal rate instead of reducing energy consumption
 
-script.on_init(function()
-  -- Initialize global table
-  global.air_filtering = global.air_filtering or {
-    entities = {}
-  }
-end)
+-- Initialize global table storage
+local air_filtering_data = {
+  entities = {}
+}
 
-script.on_configuration_changed(function(event)
-  -- Handle mod updates
-  global.air_filtering = global.air_filtering or { entities = {} }
-end)
+-- Store reference in global table if available (older Factorio versions)
+if rawget(_G, 'global') then
+  global.air_filtering = air_filtering_data
+end
 
 -- Function to recalculate pollution removal based on modules
 local function recalculate_pollution_removal(entity)
@@ -62,7 +60,7 @@ local function recalculate_pollution_removal(entity)
 
   -- Store the multipliers
   local entity_key = entity.unit_number
-  global.air_filtering.entities[entity_key] = {
+  air_filtering_data.entities[entity_key] = {
     entity = entity,
     base_pollution = base_pollution,
     efficiency_bonus = efficiency_bonus,
@@ -108,8 +106,8 @@ script.on_event(defines.events.on_entity_died, function(event)
   local entity = event.entity
   if entity then
     local entity_key = entity.unit_number
-    if entity_key and global.air_filtering.entities[entity_key] then
-      global.air_filtering.entities[entity_key] = nil
+    if entity_key and air_filtering_data.entities[entity_key] then
+      air_filtering_data.entities[entity_key] = nil
     end
   end
 end)
@@ -119,8 +117,8 @@ script.on_event(defines.events.on_player_mined_entity, function(event)
   local entity = event.entity
   if entity then
     local entity_key = entity.unit_number
-    if entity_key and global.air_filtering.entities[entity_key] then
-      global.air_filtering.entities[entity_key] = nil
+    if entity_key and air_filtering_data.entities[entity_key] then
+      air_filtering_data.entities[entity_key] = nil
     end
   end
 end)
@@ -130,8 +128,8 @@ script.on_event(defines.events.on_robot_mined_entity, function(event)
   local entity = event.entity
   if entity then
     local entity_key = entity.unit_number
-    if entity_key and global.air_filtering.entities[entity_key] then
-      global.air_filtering.entities[entity_key] = nil
+    if entity_key and air_filtering_data.entities[entity_key] then
+      air_filtering_data.entities[entity_key] = nil
     end
   end
 end)
@@ -141,8 +139,8 @@ script.on_event(defines.events.on_space_platform_mined_entity, function(event)
   local entity = event.entity
   if entity then
     local entity_key = entity.unit_number
-    if entity_key and global.air_filtering.entities[entity_key] then
-      global.air_filtering.entities[entity_key] = nil
+    if entity_key and air_filtering_data.entities[entity_key] then
+      air_filtering_data.entities[entity_key] = nil
     end
   end
 end)
@@ -158,7 +156,7 @@ end)
 -- Periodic pollution application (every 30 ticks = 0.5 seconds)
 script.on_event(defines.events.on_tick, function(event)
   if event.tick % 30 == 0 then
-    for entity_key, data in pairs(global.air_filtering.entities or {}) do
+    for entity_key, data in pairs(air_filtering_data.entities or {}) do
       if data.entity and data.entity.valid then
         local entity = data.entity
         local surface = entity.surface
