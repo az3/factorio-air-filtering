@@ -71,7 +71,7 @@ local function recalculate_pollution_removal(entity)
   }
 end
 
--- Handle entity built events
+-- Handle entity built events (player built)
 script.on_event(defines.events.on_built_entity, function(event)
   local entity = event.entity
   if entity and entity.name and string.find(entity.name, "air-filter-machine") then
@@ -87,16 +87,8 @@ script.on_event(defines.events.on_robot_built_entity, function(event)
   end
 end)
 
--- Handle script raised built events (for copy/paste etc)
-script.on_event(defines.events.on_script_raised_built_entity, function(event)
-  local entity = event.entity
-  if entity and entity.name and string.find(entity.name, "air-filter-machine") then
-    recalculate_pollution_removal(entity)
-  end
-end)
-
--- Handle entity module slots changed
-script.on_event(defines.events.on_entity_module_slots_changed, function(event)
+-- Handle space platform built events
+script.on_event(defines.events.on_space_platform_built_entity, function(event)
   local entity = event.entity
   if entity and entity.name and string.find(entity.name, "air-filter-machine") then
     recalculate_pollution_removal(entity)
@@ -133,6 +125,46 @@ script.on_event(defines.events.on_player_mined_entity, function(event)
   end
 end)
 
+-- Handle robot mined entity
+script.on_event(defines.events.on_robot_mined_entity, function(event)
+  local entity = event.entity
+  if entity then
+    local entity_key = entity.unit_number
+    if entity_key and global.air_filtering.entities[entity_key] then
+      global.air_filtering.entities[entity_key] = nil
+    end
+  end
+end)
+
+-- Handle space platform mined entity
+script.on_event(defines.events.on_space_platform_mined_entity, function(event)
+  local entity = event.entity
+  if entity then
+    local entity_key = entity.unit_number
+    if entity_key and global.air_filtering.entities[entity_key] then
+      global.air_filtering.entities[entity_key] = nil
+    end
+  end
+end)
+
+-- Handle player placed entity (covers copy/paste and other placement methods)
+script.on_event(defines.events.on_player_placed_entity, function(event)
+  local entity = event.entity
+  if entity and entity.name and string.find(entity.name, "air-filter-machine") then
+    recalculate_pollution_removal(entity)
+  end
+end)
+
+-- Handle entity settings pasted (for copy/paste entity with modules)
+script.on_event(defines.events.on_entity_settings_pasted, function(event)
+  local entity = event.destination
+  if entity and entity.name and string.find(entity.name, "air-filter-machine") then
+    -- Recalculate after a short delay to ensure modules are applied
+    script.raise_event(defines.events.on_tick, {tick = game.tick})
+    recalculate_pollution_removal(entity)
+  end
+end)
+
 -- Periodic pollution application (every 30 ticks = 0.5 seconds)
 script.on_event(defines.events.on_tick, function(event)
   if event.tick % 30 == 0 then
@@ -149,10 +181,6 @@ script.on_event(defines.events.on_tick, function(event)
 
         -- Calculate final pollution value (negative for removal)
         local final_pollution = -(data.base_pollution * total_multiplier)
-
-        -- Apply pollution removal to a small area around the machine
-        -- This simulates the enhanced pollution removal from efficiency modules
-        local pollution_radius = 5
 
         -- Remove pollution from the surface
         -- Note: We can't directly set emissions_per_minute, so we manually remove pollution
