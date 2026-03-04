@@ -44,7 +44,7 @@ data:extend({
     energy_usage = "200kW",
     ingredient_count = 1,
     module_slots = 2,
-    allowed_module_categories = {"speed", "effect"},
+    allowed_module_categories = {"speed", "efficiency"},
     allowed_effects = {"consumption", "speed", "pollution"},
     -- Basic circuit network properties
     circuit_wire_max_distance = 7.5,
@@ -96,7 +96,7 @@ data:extend({
     energy_usage = "350kW",
     ingredient_count = 1,
     module_slots = 3,
-    allowed_module_categories = {"speed", "effect"},
+    allowed_module_categories = {"speed", "efficiency"},
     allowed_effects = {"consumption", "speed", "pollution"},
     -- Basic circuit network properties
     circuit_wire_max_distance = 7.5,
@@ -148,7 +148,7 @@ data:extend({
     energy_usage = "1MW",
     ingredient_count = 1,
     module_slots = 4,
-    allowed_module_categories = {"speed", "effect"},
+    allowed_module_categories = {"speed", "efficiency"},
     allowed_effects = {"consumption", "speed", "pollution"},
     -- Basic circuit network properties
     circuit_wire_max_distance = 7.5,
