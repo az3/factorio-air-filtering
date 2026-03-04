@@ -147,20 +147,10 @@ script.on_event(defines.events.on_space_platform_mined_entity, function(event)
   end
 end)
 
--- Handle player placed entity (covers copy/paste and other placement methods)
-script.on_event(defines.events.on_player_placed_entity, function(event)
-  local entity = event.entity
-  if entity and entity.name and string.find(entity.name, "air-filter-machine") then
-    recalculate_pollution_removal(entity)
-  end
-end)
-
 -- Handle entity settings pasted (for copy/paste entity with modules)
 script.on_event(defines.events.on_entity_settings_pasted, function(event)
   local entity = event.destination
   if entity and entity.name and string.find(entity.name, "air-filter-machine") then
-    -- Recalculate after a short delay to ensure modules are applied
-    script.raise_event(defines.events.on_tick, {tick = game.tick})
     recalculate_pollution_removal(entity)
   end
 end)
